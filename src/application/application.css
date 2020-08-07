@@ -2,6 +2,7 @@
 
 
 .row-textinputs {
+	-fx-alignment: center;
 	-fx-border-color: #eeeeee00;
 	-fx-background-color: #eeeeee00;
 }

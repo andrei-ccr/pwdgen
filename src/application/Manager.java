@@ -23,19 +23,6 @@ public class Manager {
 	Database db;
 	List<MPassword> passList;
 	
-	public class Row {
-		public TextField u, n;
-		public PasswordField p;
-		public Hyperlink c, d;
-		public Row(TextField u, TextField n, PasswordField p, Hyperlink c, Hyperlink d) {
-			this.u = u;
-			this.n = n;
-			this.p = p;
-			this.c = c;
-			this.d = d;
-		}
-	}
-	
 	public Manager() throws Exception {
 		db = new Database();
 		passList = db.readAll();
@@ -137,8 +124,9 @@ public class Manager {
 		tfUsername = new TextField();
 		tfUsername.setId("rowUsername" + id.toString());
 		tfUsername.setText(username);
+		
 		tfUsername.minWidth(185);
-		tfUsername.setPromptText(" ----- No Username ----- ");
+		tfUsername.setPromptText(" -------- No Username -------- ");
 		tfUsername.getStyleClass().add("row-textinputs");
 		tfUsername.addEventHandler(KeyEvent.KEY_RELEASED, new EventUsernameChanged());
 		
@@ -147,7 +135,7 @@ public class Manager {
 		tfName.setText(name);
 		tfName.minWidth(185);
 		tfName.getStyleClass().add("row-textinputs");
-		tfName.setPromptText(" ------------------------- ");
+		tfName.setPromptText(" --------------------------------- ");
 		
 		pfPassword = new PasswordField();
 		pfPassword.setId("rowPassword" + id.toString());

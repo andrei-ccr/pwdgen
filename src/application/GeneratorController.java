@@ -18,7 +18,7 @@ import javafx.scene.layout.VBox;
 
 public class GeneratorController {
 	
-	private int pwdLength = 16;
+	private int pwdLength;
 	
 	private Generator generator;
 	private Manager manager;
@@ -59,7 +59,7 @@ public class GeneratorController {
 	public GeneratorController() { }
 	
 	public void initialize() {
-		this.pwdLength = 16;
+		this.pwdLength = 15;
 		
 		sliderPwdLength.valueProperty().addListener((ob, oldval, newval) -> {
 			this.pwdLength = (int)sliderPwdLength.getValue();
@@ -70,18 +70,16 @@ public class GeneratorController {
 			manager = new Manager();
 			
 			if(manager.getLength() == 0) {
-				labelListMessage.setVisible(true);
 				labelListMessage.setText("- List is empty -");
 			} else {
-				labelListMessage.setVisible(false);
 				for (int i=0;i<manager.getLength();i++) {
+					labelListMessage.setText(manager.getLength() + " password(s)");
 					panePasswordListBox.getChildren().add(manager.makeRow(manager.getId(i), manager.getName(i), manager.getUsername(i), manager.getPassword(i)));
 				}
 			}
 		} 
 		catch(Exception e) {
 			System.out.println("Error: Couldn't initialize Manager");
-			labelListMessage.setVisible(true);
 			labelListMessage.setText("- Couldn't load password list -");
 			e.printStackTrace();
 		}
@@ -154,6 +152,7 @@ public class GeneratorController {
 		try {
 			manager.addEntry(tfPassword.getText(), "", "");
 			panePasswordListBox.getChildren().clear();
+			labelListMessage.setText(manager.getLength() + " password(s)");
 			for (int i=0; i<manager.getLength(); i++) {
 				panePasswordListBox.getChildren().add(manager.makeRow(manager.getId(i), manager.getName(i), manager.getUsername(i), manager.getPassword(i)));
 			}
