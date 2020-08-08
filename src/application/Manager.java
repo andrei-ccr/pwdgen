@@ -211,7 +211,7 @@ public class Manager {
             int i = Integer.parseInt(m.group());
             
             try {
-            	((VBox)((HBox)((Control)evt.getSource()).getParent()).getParent()).getChildren().remove(db.getIndexFromId(i));
+            	((VBox)((HBox)((Control)evt.getSource()).getParent()).getParent()).getChildren().remove(db.getIndexFromId(i)+1);
             	deleteRow(i);
             	
             }
