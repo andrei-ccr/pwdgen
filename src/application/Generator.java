@@ -5,7 +5,7 @@ import java.util.Random;
 public class Generator {
 	
 	private int length;
-	private boolean uppercase, lowercase, numbers, special;
+	private boolean uppercase, lowercase, numbers, special1, special2;
 	
 	private StringBuilder charset;
 	private Random rand;
@@ -15,7 +15,8 @@ public class Generator {
 		this.uppercase = true;
 		this.lowercase = true;
 		this.numbers = true;
-		this.special = true;
+		this.special1 = true;
+		this.special2 = false;
 		
 	}
 	
@@ -44,8 +45,12 @@ public class Generator {
 			}
 		}
 		
-		if(this.special) {
-			this.charset.append("[];',./`-=!@#$%^&*(){}:\"<>?~_+\\|");
+		if(this.special1) {
+			this.charset.append("!@#$%^&*()");
+		}
+		
+		if(this.special2) {
+			this.charset.append("[];',./`-={}:\"<>?~_+\\|");
 		}
 	}
 	
@@ -108,12 +113,20 @@ public class Generator {
 		this.numbers = numbers;
 	}
 
-	public boolean isSpecial() {
-		return special;
+	public boolean isSpecial1() {
+		return special1;
+	}
+	
+	public boolean isSpecial2() {
+		return special2;
 	}
 
-	public void setSpecial(boolean special) {
-		this.special = special;
+	public void setSpecial1(boolean special) {
+		this.special1 = special;
+	}
+	
+	public void setSpecial2(boolean special) {
+		this.special2 = special;
 	}
 	
 }

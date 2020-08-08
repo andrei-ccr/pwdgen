@@ -41,7 +41,7 @@ public class GeneratorController {
 	private Slider sliderPwdLength;
 	
 	@FXML
-	private CheckBox checkUppercase, checkLowercase, checkNumbers, checkSpecial;
+	private CheckBox checkUppercase, checkLowercase, checkNumbers, checkSpecial1, checkSpecial2;
 	
 	@FXML
 	private CheckBox checkHide, checkCopy;
@@ -109,7 +109,8 @@ public class GeneratorController {
 		generator.setUppercase(checkUppercase.isSelected());
 		generator.setLowercase(checkLowercase.isSelected());
 		generator.setNumbers(checkNumbers.isSelected());
-		generator.setSpecial(checkSpecial.isSelected());
+		generator.setSpecial1(checkSpecial1.isSelected());
+		generator.setSpecial2(checkSpecial2.isSelected());
 		
 		if(checkHide.isSelected()) {
 			hiddenPass = generator.GeneratePassword();

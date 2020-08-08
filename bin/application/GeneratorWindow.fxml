@@ -25,11 +25,11 @@
             <CheckBox fx:id="checkUppercase" layoutX="38.0" layoutY="210.0" mnemonicParsing="false" selected="true" text="Use uppercase characters" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="210.0" />
             <CheckBox fx:id="checkLowercase" layoutX="38.0" layoutY="240.0" mnemonicParsing="false" selected="true" text="Use lowercase characters" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="240.0" />
             <CheckBox fx:id="checkNumbers" layoutX="38.0" layoutY="270.0" mnemonicParsing="false" selected="true" text="Use numbers" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="270.0" />
-            <CheckBox fx:id="checkSpecial" layoutX="320.0" layoutY="210.0" mnemonicParsing="false" selected="true" text="Use special characters" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="210.0" />
+            <CheckBox fx:id="checkSpecial1" layoutX="320.0" layoutY="210.0" mnemonicParsing="false" selected="true" text="Use special characters (Set 1)" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="210.0" />
             <Slider fx:id="sliderPwdLength" blockIncrement="1.0" layoutX="36.0" layoutY="150.0" majorTickUnit="10.0" max="95.0" min="5.0" minorTickCount="1" prefHeight="33.0" prefWidth="569.0" showTickLabels="true" value="15.0" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="150.0" />
             <Label fx:id="labelPwdLength" layoutX="37.0" layoutY="125.0" text="Password Length: 15" AnchorPane.topAnchor="125.0" />
-            <Label layoutX="320.0" layoutY="270.0" text="Strength" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="270.0" />
-            <Label layoutX="375.0" layoutY="270.0" text="Not Calculated" textFill="#bfbfbf" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="270.0" />
+            <Label layoutX="320.0" layoutY="270.0" text="Strength" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="275.0" />
+            <Label layoutX="375.0" layoutY="270.0" text="Not Calculated" textFill="#bfbfbf" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="275.0" />
             <CheckBox fx:id="checkCopy" layoutX="299.0" layoutY="65.0" mnemonicParsing="false" selected="true" text="Autocopy to clipboard" />
             <Hyperlink fx:id="linkCopy" layoutX="316.0" layoutY="84.0" onAction="#CopyPasswordToClipboard" text="Copy to clipboard" />
             <ScrollPane layoutX="15.0" layoutY="323.0" prefHeight="167.0" prefWidth="608.0" AnchorPane.leftAnchor="16.0">
@@ -41,6 +41,7 @@
                   </VBox>
               </content>
             </ScrollPane>
+            <CheckBox fx:id="checkSpecial2" layoutX="320.0" layoutY="240.0" mnemonicParsing="false" text="Use special characters (Set 2)" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="240.0" />
          </children>
       </AnchorPane>
    </top>
