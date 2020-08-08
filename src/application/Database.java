@@ -12,6 +12,28 @@ public class Database {
 	public Database() throws Exception {
 		Class.forName("org.h2.Driver");
 		conn = DriverManager.getConnection("jdbc:h2:~/pwman;AUTO_SERVER=TRUE","sa","");
+		
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement("SELECT * FROM passwords");
+			ps.executeQuery();
+			ps = conn.prepareStatement("SELECT * FROM details");
+			ps.executeQuery();
+		}
+		catch(Exception e) {
+			try {
+				ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS passwords(id INT auto_increment, pass VARCHAR(20000), PRIMARY KEY(id));");
+				ps.executeUpdate();
+				ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS details(id INT PRIMARY KEY auto_increment, name VARCHAR(255), username VARCHAR(255), pass_id INT, CONSTRAINT fk_passdetails FOREIGN KEY(pass_id) REFERENCES passwords(id) )");
+				ps.executeUpdate();
+			}
+			catch(Exception ee) {
+				System.out.println("Error: Couldn't create tables. Tables do not exist.");
+				ee.printStackTrace();
+				throw new Exception();
+			}
+			
+		}
 
 	}
 	
